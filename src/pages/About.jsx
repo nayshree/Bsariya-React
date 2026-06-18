@@ -84,7 +84,7 @@ export default function About() {
           <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
             <div className="phillosophy_box">
               <i className="mission_icon"></i>
-              <h2><span>Our Mission</span></h2>
+              <h2><span>The Mission</span></h2>
               <p>Catalysing our clients' growth by providing unrivalled services & developing strong relationship by dedicatedly committing to perform beyond expectations</p>
               <p>Creating dynamic environment to stimulate creative & innovative thinking among our team for boosting optimal scalability</p>
             </div>
