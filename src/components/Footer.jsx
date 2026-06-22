@@ -10,7 +10,9 @@ export default function Footer() {
             <div className="footer-widget">
             <h5>CONTACT US</h5>
             <ul className="posts">
-                <li><span>ADDRESS:</span>A/7, Arihant Apartments, Saibaba Nagar, Borivali West, Mumbai 400 092</li>
+                <li><span>ADDRESS:</span>10, C Wing, Dattani Nagar Two, 
+                    Swami Vivekananda Rd, Opp. Kalyan Jewellers,
+                    Borivali West, Mumbai 400 092, Maharashtra, India</li>
                 <li><span>PHONE:</span>+91 (22) 28072653 | +91-93249 17517 | +91-9619820027</li>
             </ul>
             </div>
