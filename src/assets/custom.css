@@ -1819,3 +1819,58 @@ section.aboutus a.btn.btn-default{background-color:#003869;}
         padding: 4px 7px;
     }
 }
+
+/*-----------scroll to top button-----------*/
+
+.scroll-to-top-btn {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 9999;
+    width: 46px;
+    height: 46px;
+    background: #fff;
+    color: #003869;
+    border: 2px solid #003869;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.scroll-to-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-to-top-btn:hover,
+.scroll-to-top-btn:focus {
+    background: #003869;
+    color: #fff;
+    outline: none;
+}
+
+.scroll-to-top-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 575px) {
+    .scroll-to-top-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+    }
+    .scroll-to-top-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+}
