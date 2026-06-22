@@ -30,46 +30,68 @@ function CountUp({ end, duration = 3, enableScrollSpy }) {
   return <span ref={ref}>{count}</span>;
 }
 
-
 export default function StateSection() {
   return (
-   <section className="numbers">
-      <div className="row">
-        <div className="col-xl-6 col-lg-6 col-md-6 col-sm-4"></div>
-        <div className="col-xl-6 col-lg-6 col-md-6 col-sm-8">
+    <section className="stats_section">
+      <div className="container">
+
+        {/* Header */}
+        <div className="stats_header">
+          <span className="stats_label">Why Choose Us</span>
           <h2>THE MOST <span>COST-EFFECTIVE</span> FINANCE SOLUTION</h2>
-          <div className="row no-gutter">
-            <div className="col-xl-9 col-lg-9 col-md-9 col-sm-9">
-              <div className="numbersbox">
-                <h4>PROMPT AND ACCURATE VALUATIONS</h4>
-                <hr className="small" />
-                <p>Synergistically evolve 2.0 technologies rather than just in time initiatives. Quickly deploy strategic networks with compelling e-business. Credibly pontificate highly efficient manufactured products and enabled data.</p>
-                <p>Distinctively exploit optimal alignments for intuitive bandwidth. Quickly coordinate.</p>
-              </div>
-            </div>
-            <div className="col-xl-3 col-lg-3 col-md-3 col-sm-3">
-              <div className="numbersbox-small">
-                <div className="number">
-                  <h4><CountUp end={35} duration={3} enableScrollSpy /></h4>
-                  <div className="numbername">YEARS IN THE MARKET</div>
-                </div>
-                <div className="number">
-                  <h4><CountUp end={3054} duration={3} enableScrollSpy /></h4>
-                  <div className="numbername">HAPPY CLIENTS</div>
-                </div>
-                <div className="number">
-                  <h4><CountUp end={10} duration={3} enableScrollSpy /></h4>
-                  <div className="numbername">ADVISORS</div>
-                </div>
-                <div className="number">
-                  <h4><CountUp end={2094} duration={3} enableScrollSpy /></h4>
-                  <div className="numbername">PROJECTS</div>
-                </div>
-              </div>
+        </div>
+
+        {/* Description */}
+        <div className="row justify-content-center">
+          <div className="col-lg-8 col-md-10 col-12">
+            <div className="stats_desc_box">
+              <h4>PROMPT AND ACCURATE VALUATIONS</h4>
+              <p>Synergistically evolve 2.0 technologies rather than just in time initiatives. Quickly deploy strategic networks with compelling e-business. Credibly pontificate highly efficient manufactured products and enabled data.</p>
+              <p>Distinctively exploit optimal alignments for intuitive bandwidth. Quickly coordinate.</p>
             </div>
           </div>
         </div>
+
+        {/* Stat cards */}
+        <div className="row g-4 justify-content-center">
+          <div className="col-lg-3 col-md-3 col-6">
+            <div className="stat_card">
+              <div className="stat_number">
+                <CountUp end={35} duration={3} enableScrollSpy />
+                <span className="stat_plus">+</span>
+              </div>
+              <div className="stat_name">Years in the Market</div>
+            </div>
+          </div>
+          <div className="col-lg-3 col-md-3 col-6">
+            <div className="stat_card">
+              <div className="stat_number">
+                <CountUp end={3054} duration={3} enableScrollSpy />
+                <span className="stat_plus">+</span>
+              </div>
+              <div className="stat_name">Happy Clients</div>
+            </div>
+          </div>
+          <div className="col-lg-3 col-md-3 col-6">
+            <div className="stat_card">
+              <div className="stat_number">
+                <CountUp end={10} duration={3} enableScrollSpy />
+              </div>
+              <div className="stat_name">Advisors</div>
+            </div>
+          </div>
+          <div className="col-lg-3 col-md-3 col-6">
+            <div className="stat_card">
+              <div className="stat_number">
+                <CountUp end={2094} duration={3} enableScrollSpy />
+                <span className="stat_plus">+</span>
+              </div>
+              <div className="stat_name">Projects</div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
-    )
+  );
 }

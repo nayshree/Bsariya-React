@@ -1,54 +1,98 @@
-import React from "react";  
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+const slides = [
+  {
+    bg: "/images/index2-slider-1.jpg",
+    tag: "Financial Excellence",
+    title: "Accounting & Related Advisory",
+    desc: "Our outsourcing service covers all four stages of accounting — recording, classifying, summarizing, and interpreting financial data for actionable insights.",
+  },
+  {
+    bg: "/images/index2-slider-2.jpg",
+    tag: "Three Decades of Trust",
+    title: "Audit & Assurance",
+    desc: "We are a three-decade-old audit firm providing statutory audits under Companies Act, Tax Audit, GST Audit, and comprehensive Assurance services.",
+  },
+  {
+    bg: "/images/index2-slider-3.jpg",
+    tag: "Strategic Tax Planning",
+    title: "Direct Tax",
+    desc: "Our multi-disciplinary tax team advises on corporate tax, major developments in taxation regimes, and end-to-end tax planning for your business.",
+  },
+  {
+    bg: "/images/index2-slider-4.jpg",
+    tag: "Leadership Support",
+    title: "CFO Management Services",
+    desc: "We assist clients with strategic planning and management as Virtual CFO Services in India, tailored to your stage of growth and business needs.",
+  },
+  {
+    bg: "/images/index2-slider-5.jpg",
+    tag: "GST Experts",
+    title: "Indirect Tax",
+    desc: "Well-known GST consultants with decades of experience in Indirect Tax consulting and planning for large corporates across India.",
+  },
+];
 
 export default function HeroSlider() {
   return (
-    <section className="slider_section">
-      <div className="container">
-        <Swiper
-          modules={[Autoplay]}
-          loop={true}
-          autoplay={{ delay: 8500 }}
-        >
-          <SwiperSlide>
-            <div className="item">
-              <h2>Accounting & Related Advisory</h2>
-              <p>Our outsourcing service consists of all four stages of accounting processes starting from recording of financial transactions, classifying the transactions, summarizing the accounting data into useful reports and interpreting the financial data.</p>
-              <a href="/services" className="learn_more_btn">Learn More</a>
+    <section className="hero_slider_section">
+      <Swiper
+        modules={[Autoplay, Navigation, Pagination]}
+        loop={true}
+        autoplay={{ delay: 6000, disableOnInteraction: false }}
+        navigation={{
+          nextEl: ".hero-next",
+          prevEl: ".hero-prev",
+        }}
+        pagination={{ clickable: true, el: ".hero-pagination" }}
+        speed={800}
+        className="hero-swiper"
+      >
+        {slides.map((slide, i) => (
+          <SwiperSlide key={i}>
+            <div
+              className="hero-slide"
+              style={{ backgroundImage: `url(${slide.bg})` }}
+            >
+              <div className="hero-overlay" />
+              <div className="container h-100">
+                <div className="hero-content">
+                  <span className="hero-tag">{slide.tag}</span>
+                  <h1 className="hero-title">{slide.title}</h1>
+                  <p className="hero-desc">{slide.desc}</p>
+                  <div className="hero-actions">
+                    <a href="/services" className="hero-btn-primary">
+                      Our Services
+                    </a>
+                    <a href="#contact_section" className="hero-btn-outline">
+                      Get In Touch
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </SwiperSlide>
-          <SwiperSlide>
-            <div className="item">
-              <h2>Audit & Assurance</h2>
-              <p>We are three decades old well known audit firm in India. We provide attestation function of statutory audits under Companies act, Tax Audit as per Income Tax Act, GST Audit, various other Assurance services to our clients in India.</p>
-              <a href="/services" className="learn_more_btn">Learn More</a>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="item">
-              <h2>Direct Tax</h2>
-              <p>We advise our clients on major developments in taxation regimes occurring periodically and their effect on business. Our multi-disciplinary tax team helps you in corporate tax advisory and overall tax planning.</p>
-              <a href="/services" className="learn_more_btn">Learn More</a>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="item">
-              <h2>CFO Management Services</h2>
-              <p>We assist clients in India in strategic planning and management of their affairs as Virtual CFO Services in India during initial set up as per requirement.</p>
-              <a href="/services" className="learn_more_btn">Learn More</a>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="item">
-              <h2>Indirect Tax</h2>
-              <p>We are well known GST consultants with decades of experience in Indirect Tax consulting and planning for large corporates in India.</p>
-              <a href="/services" className="learn_more_btn">Learn More</a>
-            </div>
-          </SwiperSlide>
-        </Swiper>
-      </div>
+        ))}
+      </Swiper>
+
+      {/* Arrows — individually positioned on left/right */}
+      <button className="hero-prev hero-nav-btn" aria-label="Previous">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </button>
+      <button className="hero-next hero-nav-btn" aria-label="Next">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
+      {/* Dots — centered independently */}
+      <div className="hero-pagination" />
     </section>
-    )
+  );
 }
